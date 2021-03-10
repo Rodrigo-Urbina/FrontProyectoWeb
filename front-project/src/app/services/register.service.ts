@@ -18,6 +18,6 @@ export class RegisterService {
   };
 
   register(body: any) {
-    return this.http.post<any>(`${apiUrl}/auth/signup`, body);
+    return this.http.post<any>(`${apiUrl}/auth/signup`, body, this.httpOptions);
   }
 }
