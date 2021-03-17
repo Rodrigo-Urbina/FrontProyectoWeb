@@ -1,15 +1,32 @@
-<h2>Register</h2>
-<form [formGroup]="registerForm" (ngSubmit)="register()">
-  <div class="form-group">
-    <label for="email">Email</label>
-    <input type="text" formControlName="email">
-  </div>
-  <div class="form-group">
-    <label for="password">Password</label>
-    <input type="password" formControlName="password">
-  </div>
-  <div class="form-group">
-    <button [disabled]=registerForm.invalid class="btn btn-primary">Register</button>
-    <a routerLink="/login" class="btn btn-link">Login</a>
-  </div>
-</form>
+<div fxLayoutAlign="center center" fxFlexFill>
+  <mat-card fxFlex="25">
+    <h2>Registro</h2>
+    <form [formGroup]="registerForm" (ngSubmit)="register()">
+      <mat-form-field fxLayoutAlgn="stretch" fxLayout="column">
+        <div class="form-group">
+          <input matInput type="text" placeholder="email" formControlName="E-mail"> 
+        </div>
+      </mat-form-field>
+
+      <mat-form-field fxLayoutAlgn="stretch" fxLayout="column">
+        <input matInput type="text" placeholder="name" formControlName="Nombre(s)">
+      </mat-form-field>
+
+      <mat-form-field fxLayoutAlgn="stretch" fxLayout="column">
+        <input matInput type="text" placeholder="surname" formControlName="Apellido(s)">
+      </mat-form-field>
+
+      <mat-form-field fxLayoutAlgn="stretch" fxLayout="column">
+        <input matInput type="password" placeholder="Password" formControlName="Contraseña">
+      </mat-form-field>
+
+      <mat-form-field fxLayoutAlgn="stretch" fxLayout="column">
+          <input matInput type="password" placeholder="Repite tu contraseña" formControlName="Repite tu contraseña">
+      </mat-form-field>
+
+      <div class="form-group">
+        <button mat-raised-button [disabled]=registerForm.invalid class="btn btn-primary">Registro</button>
+      </div>
+    </form>
+  </mat-card>
+</div>
