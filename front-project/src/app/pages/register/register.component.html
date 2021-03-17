@@ -4,29 +4,31 @@
     <form [formGroup]="registerForm" (ngSubmit)="register()">
       <mat-form-field fxLayoutAlgn="stretch" fxLayout="column">
         <div class="form-group">
-          <input matInput type="text" placeholder="email" formControlName="E-mail"> 
+          <input matInput type="text" placeholder="email" formControlName="email"> 
         </div>
       </mat-form-field>
 
       <mat-form-field fxLayoutAlgn="stretch" fxLayout="column">
-        <input matInput type="text" placeholder="name" formControlName="Nombre(s)">
+        <input matInput type="text" placeholder="name" formControlName="firstName">
       </mat-form-field>
 
       <mat-form-field fxLayoutAlgn="stretch" fxLayout="column">
-        <input matInput type="text" placeholder="surname" formControlName="Apellido(s)">
+        <input matInput type="text" placeholder="surname" formControlName="LastName">
       </mat-form-field>
 
       <mat-form-field fxLayoutAlgn="stretch" fxLayout="column">
-        <input matInput type="password" placeholder="Password" formControlName="Contraseña">
+        <input matInput type="password" placeholder="Password" formControlName="password">
       </mat-form-field>
 
       <mat-form-field fxLayoutAlgn="stretch" fxLayout="column">
-          <input matInput type="password" placeholder="Repite tu contraseña" formControlName="Repite tu contraseña">
+          <input matInput type="password" placeholder="Repite tu contraseña" formControlName="confirmPassword">
       </mat-form-field>
 
       <div class="form-group">
         <button mat-raised-button [disabled]=registerForm.invalid class="btn btn-primary">Registro</button>
+        <a routerLink="/login" class="btn btn-link">Login</a>
       </div>
     </form>
+    
   </mat-card>
 </div>
