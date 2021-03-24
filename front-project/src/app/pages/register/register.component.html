@@ -4,7 +4,7 @@
     <form [formGroup]="registerForm" (ngSubmit)="register()">
       <mat-form-field fxLayoutAlgn="stretch" fxLayout="column">
         <div class="form-group">
-          <input matInput type="text" placeholder="email" formControlName="email"> 
+          <input matInput type="text" placeholder="email" formControlName="email">
         </div>
       </mat-form-field>
 
@@ -13,7 +13,7 @@
       </mat-form-field>
 
       <mat-form-field fxLayoutAlgn="stretch" fxLayout="column">
-        <input matInput type="text" placeholder="surname" formControlName="LastName">
+        <input matInput type="text" placeholder="surname" formControlName="lastName">
       </mat-form-field>
 
       <mat-form-field fxLayoutAlgn="stretch" fxLayout="column">
@@ -29,6 +29,6 @@
         <a routerLink="/login" class="btn btn-link">Login</a>
       </div>
     </form>
-    
+
   </mat-card>
 </div>

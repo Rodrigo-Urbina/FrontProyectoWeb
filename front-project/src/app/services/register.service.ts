@@ -13,11 +13,11 @@ export class RegisterService {
   httpOptions = {
     headers: new HttpHeaders({
       "Content-Type": "application/json",
-      "cache-control": "no-cache"
+      "cache-control": "no-cache",
     })
   };
 
   register(body: any) {
-    return this.http.post<any>(`${apiUrl}/auth/signup`, body, this.httpOptions);
+    return this.http.post<any>(`${apiUrl}/auth/signup`, body, this.httpOptions);//{"responseType": "text"});
   }
 }
