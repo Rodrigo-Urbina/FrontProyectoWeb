@@ -16,7 +16,7 @@ const routes: Routes = [
     loadChildren: () => import('./pages/register/register.module').then( m => m.RegisterModule)
   },
   {
-    path: 'admin-dashboard',
+    path: 'admin',
     loadChildren: () => import('./pages/admin-dashboard/admin-dashboard.module').then( m => m.AdminDashboardModule)
   }
 ];
