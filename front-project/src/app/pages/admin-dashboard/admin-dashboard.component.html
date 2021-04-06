@@ -1,0 +1,26 @@
+<h2>Admin Dashboard</h2>
+<button (click)="getUsers()">Get users</button>
+<button (click)="getStudents()">Get students</button>
+<button (click)="getAdmins()">Get admins</button>
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">Email</th>
+      <th scope="col">Role</th>
+      <th scope="col">Confirmed</th>
+      <th scope="col">Blocked</th>
+      <th scope="col">Delete</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let user of users">
+     <td>{{user.id}}</td>
+     <td>{{user.email}}</td>
+     <td>{{(user.role == 1) ? "Admin" : (user.role == 0) ? "Student" : "Other"}}</td>
+     <td>{{(user.confirmed) ? "Yes" : "No"}}</td>
+     <td>{{(user.blocked) ? "Yes" : "No"}}</td>
+     <td><button mat-raised-button class="btn-danger" (click)="deleteUser(user.id)">Delete</button>
+  </tr>
+  </tbody>
+</table>
