@@ -32,6 +32,4 @@ export class TokenGuardService {
     }
     return '';
   }
-
-
 }
