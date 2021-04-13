@@ -4,10 +4,11 @@ import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { LoginRoutingModule } from './login-routing.module';
+import { NavbarComponent } from 'src/app/shared/navbar/navbar.component';
 
 
 @NgModule({
-  declarations: [],
+  declarations: [/*NavbarComponent*/],
   imports: [
     CommonModule,
     FormsModule,
