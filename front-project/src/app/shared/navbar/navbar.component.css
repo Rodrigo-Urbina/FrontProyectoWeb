@@ -1,0 +1,11 @@
+.spacer{
+  flex: 1 1 auto;
+}
+
+.navbar-color {
+  background-color: black;
+}
+
+.text-color {
+  color: white;
+}

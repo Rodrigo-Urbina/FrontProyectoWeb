@@ -9,11 +9,7 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './pages/student/login/login.component';
 import { RegisterComponent } from './pages/student/register/register.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { FlexLayoutModule } from '@angular/flex-layout';
-import { MatFormFieldModule } from '@angular/material/form-field';
-import { MatInputModule } from '@angular/material/input';
-import { MatButtonModule } from '@angular/material/button';
-import { MatCardModule } from '@angular/material/card';
+import { FlexLayoutModule } from '@angular/flex-layout'
 import { NavbarComponent } from './shared/navbar/navbar.component';
 import { RecoverPasswordComponent } from './pages/student/recover-password/recover-password.component';
 import { ChangePasswordComponent } from './pages/teacher/change-password/change-password.component';
@@ -26,6 +22,13 @@ import { ConfigDashboardComponent } from './pages/student/config-dashboard/confi
 import { DetailCounselingComponent } from './pages/student/detail-counseling/detail-counseling.component';
 import { PaymentMethodsComponent } from './pages/student/payment-methods/payment-methods.component';
 import { SuscriptionComponent } from './pages/student/suscription/suscription.component';
+
+import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatIconModule} from '@angular/material/icon';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MatButtonModule } from '@angular/material/button';
+import { MatCardModule } from '@angular/material/card';
 @NgModule({
   declarations: [
     AppComponent,
@@ -55,7 +58,9 @@ import { SuscriptionComponent } from './pages/student/suscription/suscription.co
     MatInputModule,
     MatButtonModule,
     MatCardModule,
-    HttpClientModule
+    HttpClientModule,
+    MatToolbarModule,
+    MatIconModule
   ],
   providers: [],
   bootstrap: [AppComponent]
