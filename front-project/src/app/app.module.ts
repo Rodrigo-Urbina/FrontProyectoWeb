@@ -23,12 +23,13 @@ import { DetailCounselingComponent } from './pages/student/detail-counseling/det
 import { PaymentMethodsComponent } from './pages/student/payment-methods/payment-methods.component';
 import { SuscriptionComponent } from './pages/student/suscription/suscription.component';
 
-import {MatToolbarModule} from '@angular/material/toolbar';
-import {MatIconModule} from '@angular/material/icon';
+import { MatToolbarModule  } from '@angular/material/toolbar';
+import { MatIconModule } from '@angular/material/icon';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
+import { MatMenuModule } from '@angular/material/menu';
 @NgModule({
   declarations: [
     AppComponent,
@@ -60,7 +61,8 @@ import { MatCardModule } from '@angular/material/card';
     MatCardModule,
     HttpClientModule,
     MatToolbarModule,
-    MatIconModule
+    MatIconModule,
+    MatMenuModule
   ],
   providers: [],
   bootstrap: [AppComponent]
