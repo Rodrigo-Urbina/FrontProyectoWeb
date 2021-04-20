@@ -16,6 +16,7 @@ import { ListUsersComponent } from './pages/admin/list-users/list-users.componen
 import { ListTeachersComponent } from './pages/admin/list-teachers/list-teachers.component';
 import { TransactionsComponent } from './pages/admin/transactions/transactions.component';
 import { AdminLoginComponent } from './pages/admin/login/login.component';
+import { AdminProfileComponent } from './pages/admin/profile/profile.component';
 
 //Student Modules
 import { LoginComponent } from './pages/student/login/login.component';
@@ -30,10 +31,19 @@ import { ConfigDashboardComponent } from './pages/student/config-dashboard/confi
 import { DetailCounselingComponent } from './pages/student/detail-counseling/detail-counseling.component';
 import { PaymentMethodsComponent } from './pages/student/payment-methods/payment-methods.component';
 import { SuscriptionComponent } from './pages/student/suscription/suscription.component';
+import { ChangePasswordComponent } from './pages/student/change-password/change-password.component';
 
 //Teacher Modules
-import { ChangePasswordComponent } from './pages/teacher/change-password/change-password.component';
-
+import { TeacherChangePasswordComponent } from './pages/teacher/change-password/change-password.component';
+import { TeacherConfigDashboardComponent } from './pages/teacher/config-dashboard/config-dashboard.component';
+import { TeacherCounselingComponent } from './pages/teacher/counseling/counseling.component';
+import { TeacherDashboardComponent } from './pages/teacher/dashboard/dashboard.component';
+import { TeacherDetailCounselingComponent } from './pages/teacher/detail-counseling/detail-counseling.component';
+import { TeacherLoginComponent } from './pages/teacher/login/login.component';
+import { TeacherPaymentMethodsComponent } from './pages/teacher/payment-methods/payment-methods.component';
+import { TeacherProfileComponent } from './pages/teacher/profile/profile.component';
+import { TeacherRecoverPasswordComponent } from './pages/teacher/recover-password/recover-password.component';
+import { TeacherRegisterComponent } from './pages/teacher/register/register.component';
 
 //Shared Modules
 import { NavbarComponent } from './shared/navbar/navbar.component';
@@ -51,13 +61,20 @@ import { MatMenuModule } from '@angular/material/menu';
 
 @NgModule({
   declarations: [
+    //App Components
     AppComponent,
+    //Admin Components
+    AdminDashboardComponent,
+    ListUsersComponent,
+    ListTeachersComponent,
+    TransactionsComponent,
+    AdminLoginComponent,
+    AdminProfileComponent,
+    //Student Components
     LoginComponent,
     RegisterComponent,
-    NavbarComponent,
     RecoverPasswordComponent,
-    ChangePasswordComponent,
-    AdminDashboardComponent,
+    DashboardComponent,
     CatalogTeachersComponent,
     DetailTeacherComponent,
     CounselingComponent,
@@ -66,12 +83,22 @@ import { MatMenuModule } from '@angular/material/menu';
     DetailCounselingComponent,
     PaymentMethodsComponent,
     SuscriptionComponent,
-    ListUsersComponent,
-    ListTeachersComponent,
-    TransactionsComponent,
-    DashboardComponent,
+    ChangePasswordComponent,
+    //Teacher
+    TeacherChangePasswordComponent,
+    TeacherConfigDashboardComponent,
+    TeacherCounselingComponent,
+    TeacherDashboardComponent,
+    TeacherDetailCounselingComponent,
+    TeacherLoginComponent,
+    TeacherPaymentMethodsComponent,
+    TeacherProfileComponent,
+    TeacherRecoverPasswordComponent,
+    TeacherRegisterComponent,
+    //Shared
+    NavbarComponent,
     FooterComponent,
-    AdminLoginComponent,
+
   ],
   imports: [
     BrowserModule,
