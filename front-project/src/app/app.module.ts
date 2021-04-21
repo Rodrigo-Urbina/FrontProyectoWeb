@@ -87,7 +87,8 @@ import { MatCardModule } from '@angular/material/card';
     MatCardModule,
     HttpClientModule,
     MatToolbarModule,
-    MatIconModule
+    MatIconModule,
+    FlexLayoutModule
   ],
   providers: [],
   bootstrap: [AppComponent]
