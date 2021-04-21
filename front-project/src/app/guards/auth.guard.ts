@@ -18,7 +18,7 @@ export class AuthGuard implements CanActivate {
     state: RouterStateSnapshot): boolean {
 
     //Evaluate if token is Expired
-    if(!this.tokenGuard.isAuthenticated()) {
+    if(this.tokenGuard.isAuthenticated()) {
       let user = this.tokenGuard.getUserData();
       let role = user["role"];
       let userData;
