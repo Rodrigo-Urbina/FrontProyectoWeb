@@ -1,16 +1,62 @@
-import { LOGIN, REGISTER, STUDENTHOME } from './paths';
+import { LOGIN, REGISTER, DASHBOARD, CATALOG_TEACHERS, CHANGE_PASSWORD, CONFIG_DASHBOARD, COUNSELING, DETAIL_COUNSELING, DETAIL_TEACHER, PAYMENT_METHODS, PROFILE, RECOVER_PASSWORD, SUSCRIPTION, TEACHER_CHANGE_PASSWORD, TEACHER_CONFIG_DASHBOARD, TEACHER_COUNSELING, TEACHER_DASHBOARD, TEACHER_DETAIL_COUNSELING, TEACHER_LOGIN, TEACHER_PAYMENT_METHODS, TEACHER_PROFILE, TEACHER_RECOVER_PASSWORD, TEACHER_REGISTER, ADMIN_DASHBOARD, ADMIN_LIST_TEACHERS, ADMIN_LIST_USERS, ADMIN_LOGIN, ADMIN_PROFILE, ADMIN_TRANSACTIONS } from './paths';
+import { TRoles } from './roles';
 
-export const USERROLE = {
+export const USERROLE/*: Record<TRoles, object>*/ = {
   'student': {
-    'urls': [LOGIN, REGISTER, STUDENTHOME],
-    'homePage': STUDENTHOME
+    'urls': [
+      LOGIN,
+      REGISTER,
+      DASHBOARD,
+      CATALOG_TEACHERS,
+      CHANGE_PASSWORD,
+      CONFIG_DASHBOARD,
+      COUNSELING,
+      DETAIL_COUNSELING,
+      DETAIL_TEACHER,
+      PAYMENT_METHODS,
+      PROFILE,
+      RECOVER_PASSWORD,
+      SUSCRIPTION
+    ],
+    'homePage': DASHBOARD
   },
-  'professor': {
-    'urls': [LOGIN, REGISTER, STUDENTHOME],
-    'homePage': STUDENTHOME
+  'teacher': {
+    'urls': [
+      TEACHER_CHANGE_PASSWORD,
+      TEACHER_CONFIG_DASHBOARD,
+      TEACHER_COUNSELING,
+      TEACHER_DASHBOARD,
+      TEACHER_DETAIL_COUNSELING,
+      TEACHER_LOGIN,
+      TEACHER_PAYMENT_METHODS,
+      TEACHER_PROFILE,
+      TEACHER_RECOVER_PASSWORD,
+      TEACHER_REGISTER,
+    ],
+    'homePage': TEACHER_DASHBOARD
   },
   'admin': {
-    'urls': [LOGIN, REGISTER, STUDENTHOME],
-    'homePage': STUDENTHOME
+    'urls': [
+      ADMIN_DASHBOARD,
+      ADMIN_LIST_TEACHERS,
+      ADMIN_LIST_USERS,
+      ADMIN_LOGIN,
+      ADMIN_PROFILE,
+      ADMIN_TRANSACTIONS
+    ],
+    'homePage': ADMIN_DASHBOARD
+  }
+}
+
+export function getUrls(role: number) {
+  switch (role) {
+    case 1: return USERROLE.admin.urls
+      break;
+    case 2: return USERROLE.teacher.urls
+      break;
+    case 3: return USERROLE.student.urls
+      break;
+    default: return USERROLE.student.urls
+      break;
   }
 }
