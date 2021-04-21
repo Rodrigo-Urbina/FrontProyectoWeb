@@ -12,17 +12,17 @@ const routes: Routes = [
   },
   { // ------------------------- STUDENT PATHS -------------------------
     path: LOGIN,
-    canActivate: [LoggedInGuard],
+    // canActivate: [LoggedInGuard],
     loadChildren: () => import('./pages/student/login/login.module').then( m => m.LoginModule)
   },
   {
     path: REGISTER,
-    canActivate: [LoggedInGuard],
+    // canActivate: [LoggedInGuard],
     loadChildren: () => import('./pages/student/register/register.module').then( m => m.RegisterModule)
   },
   {
     path: DASHBOARD,
-    canActivate: [AuthGuard],
+    // canActivate: [AuthGuard],
     loadChildren: () => import('./pages/student/dashboard/dashboard.module').then( m => m.DashboardModule)
   },
   {

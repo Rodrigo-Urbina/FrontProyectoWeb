@@ -17,6 +17,7 @@ export class LoggedInGuard implements CanActivate {
     state: RouterStateSnapshot): boolean {
 
     if(!this.tokenGuardService.isLoggedIn()){
+      console.log("no hay currentUser")
       return true;
     } else {
       let user = this.tokenGuardService.getUserData();
