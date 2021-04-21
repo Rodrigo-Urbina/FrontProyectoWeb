@@ -10,7 +10,7 @@ export class TokenGuardService {
 
   public isAuthenticated(): boolean {
     const jwtHelper = new JwtHelperService();
-    const user = JSON.parse(localStorage.getItem("currentUser") || '{}');
+    const user = JSON.parse(localStorage.getItem("currentUser") || '');
     if(user) {
       return !jwtHelper.isTokenExpired(user.token);
     }
@@ -26,9 +26,9 @@ export class TokenGuardService {
 
   public getUserData(): any {
     let jwtHelper = new JwtHelperService();
-    let user = JSON.parse(localStorage.getItem("currentUser") || '{}');
+    let user = JSON.parse(localStorage.getItem("currentUser") || '');
     if(user) {
-      return jwtHelper.decodeToken(user.token);
+      return jwtHelper.decodeToken(user.jwt);
     }
     return '';
   }
