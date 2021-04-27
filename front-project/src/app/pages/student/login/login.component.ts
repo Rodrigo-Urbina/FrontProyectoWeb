@@ -64,11 +64,10 @@ export class LoginComponent implements OnInit {
           console.log(res.error);
         } else {
           console.log(res);
-          //this.router.navigate(['dashboard']);
+          this.router.navigate(['dashboard']);
         }
       }, (err) => {
         console.log("Hubo un error", err);
       })
   }
-
 }
