@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { TokenGuardService } from 'src/app/services/token-guard.service';
 
 @Component({
   selector: 'app-navbar',
@@ -7,9 +9,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavbarComponent implements OnInit {
 
-  constructor() { }
+  user: any;
+
+  constructor(private router: Router,
+              private tokenService: TokenGuardService) { }
 
   ngOnInit(): void {
+    this.user = this.tokenService.getUserData();
+    // console.log(this.user);
+  }
+
+  logout() {
+    localStorage.removeItem("currentUser");
+    this.router.navigate(['']);
   }
 
 }

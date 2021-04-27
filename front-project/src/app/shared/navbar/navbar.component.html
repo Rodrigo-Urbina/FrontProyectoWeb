@@ -1,6 +1,6 @@
 <mat-menu #menuOpcion="matMenu">
-  <button mat-menu-item>Configuracion</button>
-  <button mat-menu-item>Cerrar sesion</button>
+  <a [routerLink] = "['/config-dashboard']" mat-menu-item>Configuracion</a>
+  <button mat-menu-item (click)="logout()">Cerrar sesion</button>
 </mat-menu>
 
 <mat-toolbar class="navbar-color">
@@ -8,12 +8,12 @@
   <div class="spacer">
 
   </div>
-  <div class="text-color"> 
+  <div class="text-color">
     <a mat-button><mat-icon>home</mat-icon></a>
   <a mat-button><mat-icon>notifications</mat-icon></a>
   <button mat-button [matMenuTriggerFor]="menuOpcion">
       <mat-icon>account_circle</mat-icon>
-        Usuario
+        {{user.name_first}} {{user.name_last}}
       <mat-icon>
         expand_more
       </mat-icon>
