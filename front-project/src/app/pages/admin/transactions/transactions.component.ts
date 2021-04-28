@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { AdminService } from 'src/app/services/admin.service';
 
 @Component({
   selector: 'app-transactions',
@@ -7,9 +9,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TransactionsComponent implements OnInit {
 
-  constructor() { }
+  transactions!: any;
+
+  constructor(private router: Router,
+              private adminService: AdminService) { }
 
   ngOnInit(): void {
+    this.getTransactions();
+  }
+
+  getTransactions() {
+    // this.adminService.getStudents()
+    //   .subscribe((res) => {
+    //     console.log(res);
+    //     this.transactions = res;
+    //   }, (err) => {
+    //     console.log("Error: ", err);
+    //   })
   }
 
 }

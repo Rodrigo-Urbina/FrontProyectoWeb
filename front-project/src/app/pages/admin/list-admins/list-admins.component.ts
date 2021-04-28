@@ -3,11 +3,11 @@ import { Router } from '@angular/router';
 import { AdminService } from 'src/app/services/admin.service';
 
 @Component({
-  selector: 'app-list-teachers',
-  templateUrl: './list-teachers.component.html',
-  styleUrls: ['./list-teachers.component.css']
+  selector: 'app-list-admins',
+  templateUrl: './list-admins.component.html',
+  styleUrls: ['./list-admins.component.css']
 })
-export class ListTeachersComponent implements OnInit {
+export class ListAdminsComponent implements OnInit {
 
   users!: any;
 
@@ -15,11 +15,11 @@ export class ListTeachersComponent implements OnInit {
               private adminService: AdminService) { }
 
   ngOnInit(): void {
-    this.getTeachers();
+    this.getAdmins();
   }
 
-  getTeachers() {
-    this.adminService.getTeachers()
+  getAdmins() {
+    this.adminService.getAdmins()
       .subscribe((res) => {
         console.log(res);
         this.users = res;
@@ -32,7 +32,7 @@ export class ListTeachersComponent implements OnInit {
     this.adminService.deleteUser(id)
       .subscribe((res) => {
         console.log(res);
-        this.getTeachers();
+        this.getAdmins();
       }, (err) => {
       console.log("Error:", err);
       })

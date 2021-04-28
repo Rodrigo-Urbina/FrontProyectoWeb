@@ -1,1 +1,27 @@
-<p>transactions works!</p>
+<app-navbar></app-navbar>
+<!-- hola -->
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">Email</th>
+      <th scope="col">Role</th>
+      <th scope="col">Confirmed</th>
+      <th scope="col">Blocked</th>
+      <th scope="col">Delete</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let transaction of transactions">
+      <td>{{transaction.id}}</td>
+      <td>{{transaction.email}}</td>
+      <td>{{(transaction.role == 1) ? "Admin" : (transaction.role == 3) ? "Student" : "Teacher"}}</td>
+      <td>{{(transaction.confirmed) ? "Yes" : "No"}}</td>
+      <td>{{(transaction.blocked) ? "Yes" : "No"}}</td>
+      <td>
+        <button mat-raised-button class="btn-danger" (click)="getTransactions()">Delete</button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+

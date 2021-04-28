@@ -1,1 +1,21 @@
-<p>login works!</p>
+<div fxLayoutAlign="center center" fxFlexFill>
+  <mat-card fxFlex="25">
+    <h2>Login</h2>
+    <form [formGroup]="loginForm" (ngSubmit)="login()">
+      <mat-form-field fxLayoutAlgn="stretch" fxLayout="column">
+        <div class="form-group">
+          <input matInput type="text" placeholder="email" formControlName="email">
+        </div>
+      </mat-form-field>
+
+      <mat-form-field fxLayoutAlgn="stretch" fxLayout="column">
+        <input matInput type="password" placeholder="Password" formControlName="password">
+      </mat-form-field>
+
+      <div class="form-group">
+        <a routerLink="/register" class="btn btn-link">Register</a>
+        <button mat-raised-button [disabled]=loginForm.invalid class="btn btn-primary">Login</button>
+      </div>
+    </form>
+  </mat-card>
+</div>
