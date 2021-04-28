@@ -20,6 +20,7 @@ export const SUSCRIPTION = "suscription";
 export const ADMIN_DASHBOARD = "admin/dashboard";
 export const ADMIN_LIST_TEACHERS = "admin/list-teachers";
 export const ADMIN_LIST_USERS = "admin/list-users";
+export const ADMIN_LIST_ADMINS = "admin/list-admins"
 export const ADMIN_LOGIN = "admin/login";
 export const ADMIN_PROFILE = "admin/profile";
 export const ADMIN_TRANSACTIONS = "admin/transactions";

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
+import { TokenGuardService } from 'src/app/services/token-guard.service';
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
@@ -8,9 +9,12 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class DashboardComponent implements OnInit {
 
-  constructor() { }
+  user: any;
+
+  constructor(private tokenService: TokenGuardService) { }
 
   ngOnInit(): void {
+    this.user = this.tokenService.getUserData();
   }
 
 }

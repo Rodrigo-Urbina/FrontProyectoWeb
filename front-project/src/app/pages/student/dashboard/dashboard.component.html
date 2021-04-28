@@ -2,7 +2,7 @@
 
 <mat-card>
   <mat-card-header fxLayoutAlign="center center">
-    <mat-card-title>Hola usuario!</mat-card-title>
+    <mat-card-title>Bienvenido {{user.name_first}} {{user.name_last}}!</mat-card-title>
   </mat-card-header>
 
   <div fxLayout="row wrap" fxLayoutAlign="center center">
@@ -24,18 +24,18 @@
         </mat-card-actions>
         </mat-card>
     </div>
-  
+
     <div class="content">
       <mat-card class="mat-elevation-z4" >
         <mat-card-header>
           <mat-card-title>Catalogo de profesores</mat-card-title>
         </mat-card-header>
-        <img mat-card-image src="./../assets/images/catalogoProfesores.jpeg" 
+        <img mat-card-image src="./../assets/images/catalogoProfesores.jpeg"
           height="250">
         <mat-card-content>
           <p>
             En esta seccion podra ver la calificacion de los porfesores que otros usuarios le hallan puesto que serian
-            estrellas y reseña.  
+            estrellas y reseña.
           </p>
         </mat-card-content>
         <mat-card-actions>
@@ -43,13 +43,13 @@
         </mat-card-actions>
       </mat-card>
     </div>
-  
+
     <div class="content">
       <mat-card class="mat-elevation-z4" >
         <mat-card-header>
           <mat-card-title>Ver asesoría</mat-card-title>
         </mat-card-header>
-        <img mat-card-image src="./../assets/images/verAsesorias.jpeg" 
+        <img mat-card-image src="./../assets/images/verAsesorias.jpeg"
           height="270">
         <mat-card-content>
           <p>
@@ -62,5 +62,5 @@
       </mat-card>
   </div>
   </div>
-  
+
 </mat-card>

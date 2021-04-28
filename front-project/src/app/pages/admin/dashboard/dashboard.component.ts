@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { TokenGuardService } from 'src/app/services/token-guard.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -7,9 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AdminDashboardComponent implements OnInit {
 
-  constructor() { }
+  user: any;
+
+  constructor(private tokenService: TokenGuardService) { }
 
   ngOnInit(): void {
+    this.user = this.tokenService.getUserData();
   }
 
 }

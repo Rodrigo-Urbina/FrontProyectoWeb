@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+import { LoginService } from 'src/app/services/login.service';
+import { TokenGuardService } from 'src/app/services/token-guard.service';
 
 @Component({
   selector: 'app-login',
@@ -7,9 +11,34 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AdminLoginComponent implements OnInit {
 
-  constructor() { }
+  loginForm!: FormGroup;
+
+  constructor(private formBuilder: FormBuilder,
+              private router: Router,
+              private loginService: LoginService,
+              private tokenGuard: TokenGuardService) { }
 
   ngOnInit(): void {
+    this.loginForm = this.formBuilder.group({
+      email: new FormControl('', [Validators.required, Validators.pattern("[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$")]),
+      password: new FormControl('', [Validators.required/*, Validators.minLength(5), Validators.maxLength(13)*/])
+    })
+  }
+
+  login() {
+    let body = this.loginForm.value;
+    this.loginService.login(body.email, body.password)
+      .subscribe((res) => {
+        console.log("No hubo error");
+        if(res.error) {
+          console.log(res.error);
+        } else {
+          console.log(res);
+          this.router.navigate(['admin/dashboard']);
+        }
+      }, (err) => {
+        console.log("Hubo un error", err);
+      })
   }
 
 }

@@ -14,6 +14,7 @@ import { AppComponent } from './app.component';
 import { AdminDashboardComponent } from './pages/admin/dashboard/dashboard.component';
 import { ListUsersComponent } from './pages/admin/list-users/list-users.component';
 import { ListTeachersComponent } from './pages/admin/list-teachers/list-teachers.component';
+import { ListAdminsComponent } from './pages/admin/list-admins/list-admins.component';
 import { TransactionsComponent } from './pages/admin/transactions/transactions.component';
 import { AdminLoginComponent } from './pages/admin/login/login.component';
 import { AdminProfileComponent } from './pages/admin/profile/profile.component';
@@ -59,6 +60,7 @@ import { MatCardModule } from '@angular/material/card';
 import { MatMenuModule } from '@angular/material/menu';
 
 
+
 @NgModule({
   declarations: [
     //App Components
@@ -67,6 +69,7 @@ import { MatMenuModule } from '@angular/material/menu';
     AdminDashboardComponent,
     ListUsersComponent,
     ListTeachersComponent,
+    ListAdminsComponent,
     TransactionsComponent,
     AdminLoginComponent,
     AdminProfileComponent,
@@ -98,7 +101,6 @@ import { MatMenuModule } from '@angular/material/menu';
     //Shared
     NavbarComponent,
     FooterComponent,
-
   ],
   imports: [
     BrowserModule,
