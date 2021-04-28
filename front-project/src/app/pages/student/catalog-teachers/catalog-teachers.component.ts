@@ -1,14 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import {MatTableDataSource} from '@angular/material/table';
 
-export interface PeriodicElement {
+export interface CatalogTeacher {
   profesorName: string;
   position: number;
   subject: string;
   grade: number; 
 }
 
-const ELEMENT_DATA: PeriodicElement[] = [
+const ELEMENT_DATA: CatalogTeacher[] = [
   {position: 1, profesorName: 'Luis Uresti', subject: 'Calculo integral', grade: 4},
   {position: 2, profesorName: 'Marco Antonio', subject: 'Calculo diferencial', grade: 9},
   {position: 3, profesorName: 'Carlos becerra', subject: 'Fisica', grade: 1},
