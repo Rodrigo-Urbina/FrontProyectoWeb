@@ -1,1 +1,74 @@
-<p>config-dashboard works!</p>
+<app-navbar></app-navbar>
+
+<mat-card>
+  <mat-card-header fxLayoutAlign="center center">
+    <mat-card-title>Bienvenido {{user.name_first}} {{user.name_last}}!</mat-card-title>
+  </mat-card-header>
+
+  <div fxLayout="row wrap" fxLayoutAlign="center center">
+
+    <!-- Mi Perfil -->
+    <a [routerLink]="['/profile']">
+      <div class="content">
+        <mat-card class="mat-elevation-z4">
+          <mat-card-header>
+            <mat-card-title>Mi Perfil</mat-card-title>
+          </mat-card-header>
+          <img mat-card-image src="./../assets/images/agendarAsesoria.png" height="250">
+          <mat-card-content>
+            <p>
+              Aqui puedes ver la informacion de tu perfil y hacer cambios si asi lo deseas.
+            </p>
+          </mat-card-content>
+          <mat-card-actions>
+            <button mat-button>Ir</button>
+          </mat-card-actions>
+        </mat-card>
+      </div>
+    </a>
+
+
+    <!-- Suscripcion -->.
+    <a [routerLink]="['/suscription']">
+      <div class="content">
+        <mat-card class="mat-elevation-z4">
+          <mat-card-header>
+            <mat-card-title>Suscripcion</mat-card-title>
+          </mat-card-header>
+          <img mat-card-image src="./../assets/images/catalogoProfesores.jpeg" height="250">
+          <mat-card-content>
+            <p>
+              Aqui puedes editar el tipo de suscripcion que quieras tener activa para tu perfil.
+            </p>
+          </mat-card-content>
+          <mat-card-actions>
+            <button mat-button>Ir</button>
+          </mat-card-actions>
+        </mat-card>
+      </div>
+    </a>
+
+
+    <!-- Metodo de Pago -->
+    <a [routerLink]="['/payment-methods']">
+      <div class="content">
+        <mat-card class="mat-elevation-z4">
+          <mat-card-header>
+            <mat-card-title>Metodo de Pago</mat-card-title>
+          </mat-card-header>
+          <img mat-card-image src="./../assets/images/verAsesorias.jpeg" height="270">
+          <mat-card-content>
+            <p>
+              Aqui puedes configurar los metodos de pago que tengas registrados.
+            </p>
+          </mat-card-content>
+          <mat-card-actions>
+            <button mat-button>Ir</button>
+          </mat-card-actions>
+        </mat-card>
+      </div>
+    </a>
+
+  </div>
+
+</mat-card>

@@ -28,8 +28,8 @@ export class ListAdminsComponent implements OnInit {
       })
   }
 
-  deleteUser(id: number) {
-    this.adminService.deleteUser(id)
+  updateUser(id: number, body: any) {
+    this.adminService.updateUser(id, body)
       .subscribe((res) => {
         console.log(res);
         this.getAdmins();
