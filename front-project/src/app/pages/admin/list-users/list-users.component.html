@@ -18,7 +18,7 @@
       <td>{{(user.role == 1) ? "Admin" : (user.role == 3) ? "Student" : "Teacher"}}</td>
       <td>{{(user.confirmed) ? "Yes" : "No"}}</td>
       <td>{{(user.blocked) ? "Yes" : "No"}}</td>
-      <td><button mat-raised-button class="btn-danger" (click)="deleteUser(user.id)">Delete</button>
+      <td><button mat-raised-button class="btn-danger" (click)="updateUser(user.id, { blocked: !user.blocked } )">{{( user.blocked ) ? "Unblock" : "Block"}}</button>
     </tr>
   </tbody>
 </table>

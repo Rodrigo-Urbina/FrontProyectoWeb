@@ -31,6 +31,9 @@ export class AdminService {
   getAdmins() {
     return this.http.get<any>(`${apiUrl}/user?role=1`, this.httpOptions);
   }
+  updateUser(id: number, body: any) {
+    return this.http.put<any>(`${apiUrl}/user/${id}`, body, this.httpOptions);
+  }
   deleteUser(id: number) {
     return this.http.delete<any>(`${apiUrl}/user/${id}`, this.httpOptions);
   }
