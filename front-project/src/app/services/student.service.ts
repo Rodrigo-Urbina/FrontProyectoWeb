@@ -29,7 +29,15 @@ export class StudentService {
     return this.http.get<any>(`${apiUrl}/tutoring/teacher/${id}`)
   }
 
-  getPastCounselings() {
+  getPastTutoring() {
     return this.http.get<any>(`${apiUrl}/tutoring/myPast`, this.httpOptions)
+  }
+
+  getFutureTutoring() {
+    return this.http.get<any>(`${apiUrl}/tutoring/myUpcoming`, this.httpOptions)
+  }
+
+  editTutoring(id: number, body: any) {
+    return this.http.put<any>(`${apiUrl}/tutoring/${id}`, body, this.httpOptions)
   }
 }

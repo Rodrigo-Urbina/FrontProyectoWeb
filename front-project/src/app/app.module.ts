@@ -5,6 +5,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { AgendaService, DayService, MonthAgendaService, MonthService, ScheduleModule, TimelineMonthService, TimelineViewsService, WeekService, WorkWeekService } from '@syncfusion/ej2-angular-schedule';
 //import { CalendarWeekHoursViewModule } from 'angular-calendar-week-hours-view';
 
 //App Modules
@@ -34,6 +35,7 @@ import { DetailCounselingComponent } from './pages/student/detail-counseling/det
 import { PaymentMethodsComponent } from './pages/student/payment-methods/payment-methods.component';
 import { SuscriptionComponent } from './pages/student/suscription/suscription.component';
 import { ChangePasswordComponent } from './pages/student/change-password/change-password.component';
+import { CounselingsComponent } from './pages/student/counselings/counselings.component';
 
 //Teacher Modules
 import { TeacherChangePasswordComponent } from './pages/teacher/change-password/change-password.component';
@@ -46,6 +48,7 @@ import { TeacherPaymentMethodsComponent } from './pages/teacher/payment-methods/
 import { TeacherProfileComponent } from './pages/teacher/profile/profile.component';
 import { TeacherRecoverPasswordComponent } from './pages/teacher/recover-password/recover-password.component';
 import { TeacherRegisterComponent } from './pages/teacher/register/register.component';
+import { TeacherWeekScheduleComponent } from './pages/teacher/week-schedule/week-schedule.component';
 
 //Shared Modules
 import { NavbarComponent } from './shared/navbar/navbar.component';
@@ -63,6 +66,8 @@ import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
 import { MatGridListModule } from '@angular/material/grid-list';
+
+
 
 
 
@@ -92,6 +97,7 @@ import { MatGridListModule } from '@angular/material/grid-list';
     PaymentMethodsComponent,
     SuscriptionComponent,
     ChangePasswordComponent,
+    CounselingsComponent,
     //Teacher
     TeacherChangePasswordComponent,
     TeacherConfigDashboardComponent,
@@ -103,9 +109,11 @@ import { MatGridListModule } from '@angular/material/grid-list';
     TeacherProfileComponent,
     TeacherRecoverPasswordComponent,
     TeacherRegisterComponent,
+    TeacherWeekScheduleComponent,
     //Shared
     NavbarComponent,
     FooterComponent,
+
   ],
   imports: [
     BrowserModule,
@@ -126,9 +134,10 @@ import { MatGridListModule } from '@angular/material/grid-list';
     MatPaginatorModule,
     MatSortModule,
     MatGridListModule,
+    ScheduleModule,
     //CalendarWeekHoursViewModule
   ],
-  providers: [],
+  providers: [DayService, WeekService, WorkWeekService, MonthService, AgendaService, MonthAgendaService, TimelineViewsService, TimelineMonthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
