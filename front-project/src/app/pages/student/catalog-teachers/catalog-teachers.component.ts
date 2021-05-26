@@ -1,11 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import {MatTableDataSource} from '@angular/material/table';
+import { Router } from '@angular/router';
+import { StudentService } from 'src/app/services/student.service';
 
 export interface CatalogTeacher {
   profesorName: string;
   position: number;
   subject: string;
-  grade: number; 
+  grade: number;
 }
 
 const ELEMENT_DATA: CatalogTeacher[] = [
@@ -28,11 +30,14 @@ const ELEMENT_DATA: CatalogTeacher[] = [
 })
 export class CatalogTeachersComponent implements OnInit {
 
-  constructor() { 
-    
+  teachers!: any;
+
+  constructor(private router: Router,
+              private studentService: StudentService) {
+
   }
-  displayedColumns: string[] = ['position', 'name', 'subject', 'grade'];
-  dataSource = new MatTableDataSource(ELEMENT_DATA);
+  displayedColumns: string[] = ['position', 'name', 'subject', 'grade', 'counseling'];
+  dataSource = new MatTableDataSource(this.teachers);
 
   applyFilter(event: Event) {
     const filterValue = (event.target as HTMLInputElement).value;
@@ -40,6 +45,16 @@ export class CatalogTeachersComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.getTeachers();
   }
 
+  getTeachers() {
+    this.studentService.getTeachers()
+      .subscribe((res) => {
+        console.log(res);
+        this.teachers = res;
+      }, (err) => {
+        console.log("Error", err);
+      })
+  }
 }

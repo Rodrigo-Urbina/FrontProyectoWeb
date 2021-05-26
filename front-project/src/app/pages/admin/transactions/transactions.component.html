@@ -4,23 +4,21 @@
   <thead>
     <tr>
       <th scope="col">ID</th>
-      <th scope="col">Email</th>
-      <th scope="col">Role</th>
-      <th scope="col">Confirmed</th>
-      <th scope="col">Blocked</th>
-      <th scope="col">Delete</th>
+      <th scope="col">User ID</th>
+      <th scope="col">Type</th>
+      <th scope="col">Date Requested</th>
+      <th scope="col">Date Reviewed</th>
+      <th scope="col">Status</th>
     </tr>
   </thead>
   <tbody>
     <tr *ngFor="let transaction of transactions">
       <td>{{transaction.id}}</td>
-      <td>{{transaction.email}}</td>
-      <td>{{(transaction.role == 1) ? "Admin" : (transaction.role == 3) ? "Student" : "Teacher"}}</td>
-      <td>{{(transaction.confirmed) ? "Yes" : "No"}}</td>
-      <td>{{(transaction.blocked) ? "Yes" : "No"}}</td>
-      <td>
-        <button mat-raised-button class="btn-danger" (click)="getTransactions()">Delete</button>
-      </td>
+      <td>{{transaction.user}}</td>
+      <td>{{transaction.type}}</td>
+      <td>{{transaction.date_request}}</td>
+      <td>{{(transaction.date_review == null) ? "not reviewed" : transaction.date_review}}</td>
+      <td>{{transaction.status}}</td>
     </tr>
   </tbody>
 </table>

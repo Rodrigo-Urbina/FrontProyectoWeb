@@ -15,17 +15,17 @@ export class TransactionsComponent implements OnInit {
               private adminService: AdminService) { }
 
   ngOnInit(): void {
-    this.getTransactions();
+    this.getSubscriptions();
   }
 
-  getTransactions() {
-    // this.adminService.getStudents()
-    //   .subscribe((res) => {
-    //     console.log(res);
-    //     this.transactions = res;
-    //   }, (err) => {
-    //     console.log("Error: ", err);
-    //   })
+  getSubscriptions() {
+    this.adminService.getSuscriptions()
+      .subscribe((res) => {
+        console.log(res);
+        this.transactions = res;
+      }, (err) => {
+        console.log("Error: ", err)
+      })
   }
 
 }
