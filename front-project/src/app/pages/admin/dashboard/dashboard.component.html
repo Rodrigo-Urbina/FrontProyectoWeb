@@ -1,0 +1,92 @@
+<app-navbar></app-navbar>
+
+<mat-card>
+  <mat-card-header fxLayoutAlign="center center">
+    <mat-card-title>Bienvenido {{user.name_first}} {{user.name_last}}!</mat-card-title>
+  </mat-card-header>
+
+  <div fxLayout="row wrap" fxLayoutAlign="center center">
+
+    <!-- Lista de Alumnos -->
+    <a [routerLink] = "['/admin/list-users']">
+      <div class="content">
+        <mat-card class="mat-elevation-z4">
+          <mat-card-header>
+            <mat-card-title>Lista de Alumnos</mat-card-title>
+          </mat-card-header>
+          <img mat-card-image src="./../assets/images/agendarAsesoria.png" height="250">
+          <mat-card-content>
+            <p>
+              Aqui puedes ver la información más importante de los alumnos que forman parte de la aplicación.
+            </p>
+          </mat-card-content>
+          <mat-card-actions>
+            <button mat-button>Ir</button>
+          </mat-card-actions>
+        </mat-card>
+      </div>
+    </a>
+
+    <!-- Lista de Maestros -->.
+    <a [routerLink] = "['/admin/list-teachers']">
+      <div class="content">
+        <mat-card class="mat-elevation-z4">
+          <mat-card-header>
+            <mat-card-title>Lista de Maestros</mat-card-title>
+          </mat-card-header>
+          <img mat-card-image src="./../assets/images/catalogoProfesores.jpeg" height="250">
+          <mat-card-content>
+            <p>
+              Aqui puedes ver la información más importante de los maestros que forman parte de la aplicación.
+            </p>
+          </mat-card-content>
+          <mat-card-actions>
+            <button mat-button>Ir</button>
+          </mat-card-actions>
+        </mat-card>
+      </div>
+    </a>
+
+    <!-- Lista de Administradores -->
+    <a [routerLink] = "['/admin/list-admins']">
+      <div class="content">
+        <mat-card class="mat-elevation-z4">
+          <mat-card-header>
+            <mat-card-title>Lista de Administradores</mat-card-title>
+          </mat-card-header>
+          <img mat-card-image src="./../assets/images/verAsesorias.jpeg" height="270">
+          <mat-card-content>
+            <p>
+              Aqui puedes ver la información más importante de los administradores que forman parte de la aplicación.
+            </p>
+          </mat-card-content>
+          <mat-card-actions>
+            <button mat-button>Ir</button>
+          </mat-card-actions>
+        </mat-card>
+      </div>
+    </a>
+
+    <!-- Lista de Transacciones -->
+    <a [routerLink] = "['/admin/transactions']">
+      <div class="content">
+        <mat-card class="mat-elevation-z4">
+          <mat-card-header>
+            <mat-card-title>Transacciones</mat-card-title>
+          </mat-card-header>
+          <img mat-card-image src="./../assets/images/catalogoProfesores.jpeg" height="250">
+          <mat-card-content>
+            <p>
+              Aqui puedes ver la información de las transacciones que suceden dentro de la aplicación.
+            </p>
+          </mat-card-content>
+          <mat-card-actions>
+            <button mat-button>Ir</button>
+          </mat-card-actions>
+        </mat-card>
+      </div>
+    </a>
+
+  </div>
+
+</mat-card>

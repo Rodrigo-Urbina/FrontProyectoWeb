@@ -1,0 +1,25 @@
+<app-navbar></app-navbar>
+<!-- hola -->
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">User ID</th>
+      <th scope="col">Type</th>
+      <th scope="col">Date Requested</th>
+      <th scope="col">Date Reviewed</th>
+      <th scope="col">Status</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let transaction of transactions">
+      <td>{{transaction.id}}</td>
+      <td>{{transaction.user}}</td>
+      <td>{{transaction.type}}</td>
+      <td>{{transaction.date_request}}</td>
+      <td>{{(transaction.date_review == null) ? "not reviewed" : transaction.date_review}}</td>
+      <td>{{transaction.status}}</td>
+    </tr>
+  </tbody>
+</table>
+

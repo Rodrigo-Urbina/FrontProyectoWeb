@@ -1,0 +1,24 @@
+<app-navbar></app-navbar>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">Email</th>
+      <th scope="col">Role</th>
+      <th scope="col">Confirmed</th>
+      <th scope="col">Blocked</th>
+      <th scope="col">Block</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let user of users">
+      <td>{{user.id}}</td>
+      <td>{{user.email}}</td>
+      <td>{{(user.role == 1) ? "Admin" : (user.role == 3) ? "Student" : "Teacher"}}</td>
+      <td>{{(user.confirmed) ? "Yes" : "No"}}</td>
+      <td>{{(user.blocked) ? "Yes" : "No"}}</td>
+      <td><button mat-raised-button class="btn-danger" (click)="updateUser(user.id, { blocked: !user.blocked } )">{{(user.blocked ) ? "Unblock" : "Block"}}</button></td>
+    </tr>
+  </tbody>
+</table>

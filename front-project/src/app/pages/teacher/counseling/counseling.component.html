@@ -1,0 +1,56 @@
+<app-navbar></app-navbar>
+
+<h2>Asesorias Futuras</h2>
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">ID Counseling</th>
+      <th scope="col">ID Teacher</th>
+      <th scope="col">Duration (minutes)</th>
+      <th scope="col">Date</th>
+      <th scope="col">Status</th>
+      <th scope="col">Response Student</th>
+      <th scope="col">Response Teacher</th>
+      <th scope="col">Cancel Counseling</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let future of futures" routerLink="/detail-teacher/{{future.teacher}}">
+      <td>{{future.id}}</td>
+      <td>{{future.teacher}}</td>
+      <td>{{future.duration}}</td>
+      <td>{{future.datetime}}</td>
+      <td>{{future.status}}</td>
+      <td>{{future.response_student}}</td>
+      <td>{{(future.response_teacher == null) ? "unconfirmed" : future.response_teacher}}</td>
+      <td><button mat-raised-button class="btn-danger" (click)="cancelTutoring(future.id)">Cancel</button></td>
+      <td><button mat-raised-button class="btn-danger" (click)="confirmTutoring(future.id)">Confirm</button></td>
+    </tr>
+  </tbody>
+</table>
+
+<h2>Asesorias Pasadas</h2>
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">ID Counseling</th>
+      <th scope="col">ID Teacher</th>
+      <th scope="col">Duration (minutes)</th>
+      <th scope="col">Date</th>
+      <th scope="col">Status</th>
+      <th scope="col">Response Student</th>
+      <th scope="col">Response Teacher</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let past of pasts" routerLink="/detail-teacher/{{past.teacher}}">
+      <td>{{past.id}}</td>
+      <td>{{past.teacher}}</td>
+      <td>{{past.duration}}</td>
+      <td>{{past.datetime}}</td>
+      <td>{{past.status}}</td>
+      <td>{{past.response_student}}</td>
+      <td>{{past.response_teacher}}</td>
+    </tr>
+  </tbody>
+</table>
