@@ -5,6 +5,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FlexLayoutModule } from '@angular/flex-layout';
+//import { CalendarWeekHoursViewModule } from 'angular-calendar-week-hours-view';
 
 //App Modules
 import { AppRoutingModule } from './app-routing.module';
@@ -62,6 +63,7 @@ import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
 import { MatGridListModule } from '@angular/material/grid-list';
+
 
 
 @NgModule({
@@ -123,7 +125,8 @@ import { MatGridListModule } from '@angular/material/grid-list';
     MatTableModule,
     MatPaginatorModule,
     MatSortModule,
-    MatGridListModule
+    MatGridListModule,
+    //CalendarWeekHoursViewModule
   ],
   providers: [],
   bootstrap: [AppComponent]
