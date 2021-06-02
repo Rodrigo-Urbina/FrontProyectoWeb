@@ -65,3 +65,11 @@ table {
   border-color: black;
   box-sizing: border-box;
 }
+
+.text-size {
+  font-size: 30px;
+}
+
+.info-size {
+  margin: 51px;
+}
