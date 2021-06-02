@@ -70,9 +70,6 @@ export class TeacherProfileComponent implements OnInit {
       if(res.status) {
         return console.log(res);
       }
-      this.router.navigate(['login']);
-    }, (err) => {
-      console.log("error", err)
     })
   }
 }

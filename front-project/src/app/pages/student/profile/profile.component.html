@@ -27,7 +27,7 @@
                 <h6 class="mb-0">First Name</h6>
               </div>
               <div class="col-sm-9 text-secondary">
-                <input placeholder={{user.name_first}}>
+                <input placeholder={{user.name_first}} formControlName="firstname">
                 <label ng-hide="editMode">{{user.name_first}}</label>
               </div>
             </div>
@@ -37,7 +37,7 @@
                 <h6 class="mb-0">Last Name</h6>
               </div>
               <div class="col-sm-9 text-secondary">
-                <input placeholder={{user.name_last}}>
+                <input placeholder={{user.name_last}} formControlName="lastname">
                 <label ng-hide="editMode">{{user.name_last}}</label>
               </div>
             </div>
@@ -47,7 +47,7 @@
                 <h6 class="mb-0">Email</h6>
               </div>
               <div class="col-sm-9 text-secondary">
-                <input placeholder={{user.email}}>
+                <input placeholder={{user.email}} formControlName="email">
                 <label ng-hide="editMode">{{user.email}}</label>
               </div>
             </div>

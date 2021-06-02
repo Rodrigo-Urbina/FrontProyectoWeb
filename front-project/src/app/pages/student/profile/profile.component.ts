@@ -44,8 +44,8 @@ export class ProfileComponent implements OnInit {
     this.user = this.tokenService.getUserData();
     this.editForm = this.formBuilder.group({
       email: new FormControl('', [Validators.required, Validators.pattern("[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$")]),
-      name: new FormControl('', [Validators.required, Validators.minLength(5), Validators.maxLength(13)]),
-      surname: new FormControl('', [Validators.required, Validators.minLength(5), Validators.maxLength(13)]),
+      firstname: new FormControl('', [Validators.required, Validators.minLength(5), Validators.maxLength(13)]),
+      lastname: new FormControl('', [Validators.required, Validators.minLength(5), Validators.maxLength(13)]),
     })
   }
 
@@ -61,8 +61,8 @@ export class ProfileComponent implements OnInit {
 
     let newBody = {
       "email": body.email,
-      "name": body.name,
-      "surname": body.name
+      "firstname": body.name,
+      "lastname": body.name
     }
 
     console.log(newBody);
@@ -71,10 +71,6 @@ export class ProfileComponent implements OnInit {
       if(res.status) {
         return console.log(res);
       }
-      this.router.navigate(['login']);
-    }, (err) => {
-      console.log("error", err)
     })
-
   }
 }
