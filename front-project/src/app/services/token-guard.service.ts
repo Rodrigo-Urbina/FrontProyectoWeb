@@ -18,8 +18,6 @@ export class TokenGuardService {
       user = null;
     }
 
-    console.log(user.jwt);
-
 
     if(user) {
       console.log(jwtHelper.isTokenExpired(user.jwt))

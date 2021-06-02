@@ -4,8 +4,6 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { LOGIN, REGISTER } from 'src/app/constants/paths';
 import { RegisterService } from 'src/app/services/register.service';
 import { MustMatch } from '../../../helpers/must-match.validator';
-import { MatDialog } from '@angular/material/dialog';
-
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
@@ -18,8 +16,7 @@ export class RegisterComponent implements OnInit {
   constructor(private formBuilder: FormBuilder,
               private route: ActivatedRoute,
               private router: Router,
-              private registerService: RegisterService,
-              private dialog: MatDialog) { }
+              private registerService: RegisterService) { }
 
   ngOnInit(): void {
     this.registerForm = this.formBuilder.group({
