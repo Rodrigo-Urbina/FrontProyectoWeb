@@ -23,7 +23,7 @@
       </div>
       <div class="col-md-8">
         <div class="card mb-3">
-          <form [formGroup]="editForm">
+          <form [formGroup]="editForm" (ngSubmit)="edit()">
             <div class="card-body">
               <div class="row">
                 <div class="col-sm-3">
@@ -61,13 +61,6 @@
                 </div>
               </div>
               <hr />
-              <button
-                ng-click="editMode=true"
-                mat-raised-button
-                color="primary"
-              >
-                Editar
-              </button>
               <button
                 ng-click="editMode=false"
                 mat-raised-button

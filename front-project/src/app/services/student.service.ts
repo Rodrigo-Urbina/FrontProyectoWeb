@@ -17,6 +17,14 @@ export class StudentService {
     })
   }
 
+  updateStudent(id: number, body: any) {
+    return this.http.put<any>(`${apiUrl}/user/${id}`, body, this.httpOptions)
+  }
+
+  getSuscription() {
+    return this.http.get<any>(`${apiUrl}/mySubscription`)
+  }
+
   getTeachers() {
     return this.http.get<any>(`${apiUrl}/teacher`, this.httpOptions);
   }
