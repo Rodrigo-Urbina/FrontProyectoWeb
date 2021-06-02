@@ -37,4 +37,7 @@ export class AdminService {
   deleteUser(id: number) {
     return this.http.delete<any>(`${apiUrl}/user/${id}`, this.httpOptions);
   }
+  getSuscriptions() {
+    return this.http.get<any>(`${apiUrl}/subscription`, this.httpOptions);
+  }
 }

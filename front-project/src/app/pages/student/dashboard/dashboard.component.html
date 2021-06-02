@@ -5,62 +5,70 @@
     <mat-card-title>Bienvenido {{user.name_first}} {{user.name_last}}!</mat-card-title>
   </mat-card-header>
 
+
   <div fxLayout="row wrap" fxLayoutAlign="center center">
-    <div class="content">
-      <mat-card class="mat-elevation-z4" >
-        <mat-card-header>
-          <mat-card-title>Agendar asesoría</mat-card-title>
-        </mat-card-header>
-        <img mat-card-image src="./../assets/images/agendarAsesoria.png"
-         height="250">
-        <mat-card-content>
-          <p>
-            En esta seccion el usuario podra seleccionar una hora, materia y profesor,
+
+    <!-- Agendar Asesoria -->
+    <!-- <a [routerLink]="['/counseling']">
+      <div class="content">
+        <mat-card class="mat-elevation-z4">
+          <mat-card-header>
+            <mat-card-title>Agendar asesoría</mat-card-title>
+          </mat-card-header>
+          <img mat-card-image src="./../assets/images/agendarAsesoria.png" height="250">
+          <mat-card-content>
+            <p>
+              En esta seccion el usuario podra seleccionar una hora, materia y profesor,
               con el cual se agendara.
-          </p>
-        </mat-card-content>
-        <mat-card-actions>
-          <button mat-button>Ir</button>
-        </mat-card-actions>
+            </p>
+          </mat-card-content>
+          <mat-card-actions>
+            <button mat-button>Ir</button>
+          </mat-card-actions>
         </mat-card>
-    </div>
+      </div>
+    </a> -->
 
-    <div class="content">
-      <mat-card class="mat-elevation-z4" >
-        <mat-card-header>
-          <mat-card-title>Catalogo de profesores</mat-card-title>
-        </mat-card-header>
-        <img mat-card-image src="./../assets/images/catalogoProfesores.jpeg"
-          height="250">
-        <mat-card-content>
-          <p>
-            En esta seccion podra ver la calificacion de los porfesores que otros usuarios le hallan puesto que serian
-            estrellas y reseña.
-          </p>
-        </mat-card-content>
-        <mat-card-actions>
-          <button mat-button>Ir</button>
-        </mat-card-actions>
-      </mat-card>
-    </div>
+    <!-- Catalogo de Profesores -->
+    <a [routerLink] = "['/catalog-teachers']">
+      <div class="content">
+        <mat-card class="mat-elevation-z4">
+          <mat-card-header>
+            <mat-card-title>Catalogo de profesores</mat-card-title>
+          </mat-card-header>
+          <img mat-card-image src="./../assets/images/catalogoProfesores.jpeg" height="250">
+          <mat-card-content>
+            <p>
+              En esta seccion podra ver la calificacion de los porfesores que otros usuarios le hallan puesto que serian
+              estrellas y reseña.
+            </p>
+          </mat-card-content>
+          <mat-card-actions>
+            <button mat-button>Ir</button>
+          </mat-card-actions>
+        </mat-card>
+      </div>
+    </a>
 
-    <div class="content">
-      <mat-card class="mat-elevation-z4" >
-        <mat-card-header>
-          <mat-card-title>Ver asesoría</mat-card-title>
-        </mat-card-header>
-        <img mat-card-image src="./../assets/images/verAsesorias.jpeg"
-          height="270">
-        <mat-card-content>
-          <p>
-            En esta seccion podra ver las asesorias que halla tomado, las que tiene proximo
-          </p>
-        </mat-card-content>
-        <mat-card-actions>
-          <button mat-button>Ir</button>
-        </mat-card-actions>
-      </mat-card>
-  </div>
+    <!-- Ver Asesoria -->
+    <a [routerLink] = "['/counselings']">
+      <div class="content">
+        <mat-card class="mat-elevation-z4">
+          <mat-card-header>
+            <mat-card-title>Ver asesoría</mat-card-title>
+          </mat-card-header>
+          <img mat-card-image src="./../assets/images/verAsesorias.jpeg" height="270">
+          <mat-card-content>
+            <p>
+              En esta seccion podra ver las asesorias que halla tomado, las que tiene proximo
+            </p>
+          </mat-card-content>
+          <mat-card-actions>
+            <button mat-button>Ir</button>
+          </mat-card-actions>
+        </mat-card>
+      </div>
+    </a>
   </div>
 
 </mat-card>

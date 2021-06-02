@@ -6,7 +6,9 @@
   </mat-card-header>
 
   <div fxLayout="row wrap" fxLayoutAlign="center center">
-    <div class="content">
+
+    <!-- Disponibilidad de horario -->
+    <!-- <div class="content">
       <mat-card class="mat-elevation-z4" >
         <mat-card-header>
           <mat-card-title>Disponibilidad de horario</mat-card-title>
@@ -15,7 +17,7 @@
          height="230">
         <mat-card-content>
           <p>
-            En esta seccion usted podra crear su horario que estara disponible 
+            En esta seccion usted podra crear su horario que estara disponible
             para las asesorias
           </p>
         </mat-card-content>
@@ -23,43 +25,47 @@
           <button mat-button>Ir</button>
         </mat-card-actions>
         </mat-card>
-    </div>
-  
-    <div class="content">
-      <mat-card class="mat-elevation-z4" >
-        <mat-card-header>
-          <mat-card-title>Ver asesoría</mat-card-title>
-        </mat-card-header>
-        <img mat-card-image src="./../assets/images/catalogoProfesores.jpeg" 
-          height="250">
-        <mat-card-content>
-          <p>
-            En esta seccion podra ver su historial de asesorías y podra aceptar las asesorías futuras 
-          </p>
-        </mat-card-content>
-        <mat-card-actions>
-          <button mat-button>Ir</button>
-        </mat-card-actions>
-      </mat-card>
-    </div>
-  
-    <div class="content">
-      <mat-card class="mat-elevation-z4" >
-        <mat-card-header>
-          <mat-card-title>Calendario de asesorias asesoría</mat-card-title>
-        </mat-card-header>
-        <img mat-card-image src="./../assets/images/verAsesorias.jpeg" 
-          height="225">
-        <mat-card-content>
-          <p>
-            En esta seccion se mostrara sus futuras asesorías con el usuario asignado
-          </p>
-        </mat-card-content>
-        <mat-card-actions>
-          <button mat-button>Ir</button>
-        </mat-card-actions>
-      </mat-card>
+    </div> -->
+
+    <!-- Asesorias -->
+    <a [routerLink] = "['/teacher/counseling']">
+      <div class="content">
+        <mat-card class="mat-elevation-z4">
+          <mat-card-header>
+            <mat-card-title>Ver asesoría</mat-card-title>
+          </mat-card-header>
+          <img mat-card-image src="./../assets/images/catalogoProfesores.jpeg" height="210">
+          <mat-card-content>
+            <p>
+              En esta seccion podra ver su historial de asesorías y podra aceptar las asesorías futuras
+            </p>
+          </mat-card-content>
+          <mat-card-actions>
+            <button mat-button>Ir</button>
+          </mat-card-actions>
+        </mat-card>
+      </div>
+    </a>
+
+    <!-- Calendario de asesorias -->
+    <a [routerLink] = "['/teacher/week-schedule']">
+      <div class="content">
+        <mat-card class="mat-elevation-z4">
+          <mat-card-header>
+            <mat-card-title>Calendario de asesorias</mat-card-title>
+          </mat-card-header>
+          <img mat-card-image src="./../assets/images/verAsesorias.jpeg" height="225">
+          <mat-card-content>
+            <p>
+              En esta seccion podra ver el calendario para ver las asignaciones futuras
+            </p>
+          </mat-card-content>
+          <mat-card-actions>
+            <button mat-button>Ir</button>
+          </mat-card-actions>
+        </mat-card>
+      </div>
+    </a>
   </div>
-  </div>
-  
+
 </mat-card>

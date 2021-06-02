@@ -23,8 +23,7 @@
       <td>{{future.status}}</td>
       <td>{{future.response_student}}</td>
       <td>{{(future.response_teacher == null) ? "unconfirmed" : future.response_teacher}}</td>
-      <td><button mat-raised-button class="btn-danger" (click)="cancelTutoring(future.id)">Cancel</button></td>
-      <td><button mat-raised-button class="btn-danger" (click)="confirmTutoring(future.id)">Confirm</button></td>
+      <td><button mat-raised-button class="btn-danger" (click) = "cancelTutoring(future.id)">Cancel</button></td>
     </tr>
   </tbody>
 </table>

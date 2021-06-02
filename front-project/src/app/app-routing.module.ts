@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { ADMIN_DASHBOARD, ADMIN_LIST_ADMINS, ADMIN_LIST_TEACHERS, ADMIN_LIST_USERS, ADMIN_LOGIN, ADMIN_PROFILE, ADMIN_TRANSACTIONS, CATALOG_TEACHERS, CHANGE_PASSWORD, CONFIG_DASHBOARD, COUNSELING, DASHBOARD, DETAIL_COUNSELING, DETAIL_TEACHER, LOGIN, PAYMENT_METHODS, PROFILE, RECOVER_PASSWORD, REGISTER, SUSCRIPTION, TEACHER_CHANGE_PASSWORD, TEACHER_CONFIG_DASHBOARD, TEACHER_COUNSELING, TEACHER_DASHBOARD, TEACHER_DETAIL_COUNSELING, TEACHER_LOGIN, TEACHER_PAYMENT_METHODS, TEACHER_PROFILE, TEACHER_RECOVER_PASSWORD, TEACHER_REGISTER } from './constants/paths';
+import { ADMIN_DASHBOARD, ADMIN_LIST_ADMINS, ADMIN_LIST_TEACHERS, ADMIN_LIST_USERS, ADMIN_LOGIN, ADMIN_PROFILE, ADMIN_TRANSACTIONS, CATALOG_TEACHERS, CHANGE_PASSWORD, CONFIG_DASHBOARD, COUNSELING, COUNSELINGS, DASHBOARD, DETAIL_COUNSELING, DETAIL_TEACHER, LOGIN, PAYMENT_METHODS, PROFILE, RECOVER_PASSWORD, REGISTER, SUSCRIPTION, TEACHER_CHANGE_PASSWORD, TEACHER_CONFIG_DASHBOARD, TEACHER_COUNSELING, TEACHER_DASHBOARD, TEACHER_DETAIL_COUNSELING, TEACHER_LOGIN, TEACHER_PAYMENT_METHODS, TEACHER_PROFILE, TEACHER_RECOVER_PASSWORD, TEACHER_REGISTER, TEACHER_WEEK_SCHEDULE } from './constants/paths';
 import { AuthGuard } from './guards/auth.guard';
 import { LoggedInGuard } from './guards/logged-in.guard';
 
@@ -40,6 +40,10 @@ const routes: Routes = [
   {
     path: COUNSELING,
     loadChildren: () => import('./pages/student/counseling/counseling.module').then( m => m.CounselingModule)
+  },
+  {
+    path: COUNSELINGS,
+    loadChildren: () => import('./pages/student/counselings/counselings.module').then( m => m.CounselingsModule)
   },
   {
     path: DETAIL_COUNSELING,
@@ -132,6 +136,10 @@ const routes: Routes = [
   {
     path: TEACHER_REGISTER,
     loadChildren: () => import('./pages/teacher/register/register.module').then( m => m.RegisterModule)
+  },
+  {
+    path: TEACHER_WEEK_SCHEDULE,
+    loadChildren: () => import('./pages/teacher/week-schedule/week-schedule.module').then( m => m.WeekScheduleModule)
   },
 ];
 
