@@ -69,6 +69,14 @@
                   <div class="col-sm-9 text-secondary">
                     8/10
                   </div>
+                  <hr>
+            <button ng-click="editMode=true" mat-raised-button color="primary">
+              Editar
+            </button>
+            <button ng-click="editMode=false" mat-raised-button color="primary" [disabled]=editForm.invalid>
+              Guardar
+            </button>
+            <hr>
                 </div>
                 <hr>
                 <!-- <div class="row">

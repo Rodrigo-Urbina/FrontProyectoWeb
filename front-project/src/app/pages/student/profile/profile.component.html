@@ -27,7 +27,8 @@
                 <h6 class="mb-0">First Name</h6>
               </div>
               <div class="col-sm-9 text-secondary">
-                {{user.name_first}}
+                <input placeholder={{user.name_first}}>
+                <label ng-hide="editMode">{{user.name_first}}</label>
               </div>
             </div>
             <hr>
@@ -36,7 +37,8 @@
                 <h6 class="mb-0">Last Name</h6>
               </div>
               <div class="col-sm-9 text-secondary">
-                {{user.name_last}}
+                <input placeholder={{user.name_last}}>
+                <label ng-hide="editMode">{{user.name_last}}</label>
               </div>
             </div>
             <hr>
@@ -45,10 +47,17 @@
                 <h6 class="mb-0">Email</h6>
               </div>
               <div class="col-sm-9 text-secondary">
-                {{user.email}}
+                <input placeholder={{user.email}}>
+                <label ng-hide="editMode">{{user.email}}</label>
               </div>
             </div>
             <hr>
+            <button ng-click="editMode=true" mat-raised-button color="primary">
+              Editar
+            </button>
+            <button ng-click="editMode=false" mat-raised-button color="primary" [disabled]=editForm.invalid>
+              Guardar
+            </button>
             <hr>
           </div>
         </div>
