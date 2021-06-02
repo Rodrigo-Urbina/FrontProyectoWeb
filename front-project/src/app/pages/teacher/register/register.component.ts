@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
+import { TEACHER_LOGIN } from 'src/app/constants/paths';
 import { RegisterService } from 'src/app/services/register.service';
 import { MustMatch } from '../../../helpers/must-match.validator';
 
@@ -42,8 +43,12 @@ export class TeacherRegisterComponent implements OnInit {
       if(res.status) {
         return console.log(res);
       }
-      this.router.navigate(['login']);
+      this.router.navigate([TEACHER_LOGIN]);
     }, (err) => {
+      if(err.status == 200) {
+        this.router.navigate([TEACHER_LOGIN])
+      }
+      alert("This email has already been registered, try with a different email")
       console.log("error", err)
     })
 

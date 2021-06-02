@@ -34,6 +34,8 @@ export class AuthGuard implements CanActivate {
            break;
       }
 
+      console.log(userData)
+
       if(userData !== undefined) {
         if(userData['urls'].includes(next.routeConfig?.path!)) {
           return true;
@@ -49,6 +51,7 @@ export class AuthGuard implements CanActivate {
       // this.router.navigate([''])
       // return false;
     } else {
+      console.log('No hay token')
       this.router.navigate([LOGIN]); // change for HOME
       return false;
     }

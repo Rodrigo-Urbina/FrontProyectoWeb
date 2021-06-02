@@ -25,8 +25,8 @@ export class StudentService {
     return this.http.get<any>(`${apiUrl}/teacher/${id}`, this.httpOptions);
   }
 
-  getAppointments(id: number) {
-    return this.http.get<any>(`${apiUrl}/tutoring/teacher/${id}`)
+  getAppointments(id: number, body: any) {
+    return this.http.post<any>(`${apiUrl}/tutoring/teacher/${id}`, body, this.httpOptions)
   }
 
   getPastTutoring() {

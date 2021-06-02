@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router, UrlSegment } from '@angular/router';
+import { TEACHER_DASHBOARD } from 'src/app/constants/paths';
 import { USERROLE } from 'src/app/constants/userRole';
 import { LoginService } from 'src/app/services/login.service';
 import { TokenGuardService } from 'src/app/services/token-guard.service';
@@ -36,7 +37,7 @@ export class TeacherLoginComponent implements OnInit {
           console.log(res.error);
         } else {
           console.log(res);
-          this.router.navigate(['teacher/dashboard']);
+          this.router.navigate([TEACHER_DASHBOARD]);
         }
       }, (err) => {
         console.log("Hubo un error", err);

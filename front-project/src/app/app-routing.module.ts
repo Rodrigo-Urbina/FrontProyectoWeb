@@ -12,17 +12,17 @@ const routes: Routes = [
   },
   { // ------------------------- STUDENT PATHS -------------------------
     path: LOGIN,
-    // canActivate: [LoggedInGuard],
+    canActivate: [LoggedInGuard],
     loadChildren: () => import('./pages/student/login/login.module').then( m => m.LoginModule)
   },
   {
     path: REGISTER,
-    // canActivate: [LoggedInGuard],
+    canActivate: [LoggedInGuard],
     loadChildren: () => import('./pages/student/register/register.module').then( m => m.RegisterModule)
   },
   {
     path: DASHBOARD,
-    // canActivate: [AuthGuard],
+    canActivate: [AuthGuard],
     loadChildren: () => import('./pages/student/dashboard/dashboard.module').then( m => m.DashboardModule)
   },
   {
@@ -71,6 +71,7 @@ const routes: Routes = [
   },
   { // ------------------------- ADMIN PATHS -------------------------
     path: ADMIN_DASHBOARD,
+    canActivate: [AuthGuard],
     loadChildren: () => import('./pages/admin/dashboard/dashboard.module').then( m => m.DashboardModule)
   },
   {
@@ -140,6 +141,10 @@ const routes: Routes = [
   {
     path: TEACHER_WEEK_SCHEDULE,
     loadChildren: () => import('./pages/teacher/week-schedule/week-schedule.module').then( m => m.WeekScheduleModule)
+  },
+  { // Prevent Random Routes
+    path: '**',
+    redirectTo: LOGIN,
   },
 ];
 
