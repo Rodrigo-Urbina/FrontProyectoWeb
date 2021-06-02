@@ -34,6 +34,7 @@ export class ProfileComponent implements OnInit {
 
   ngOnInit(): void {
     this.user = this.tokenService.getUserData();
+    console.log(this.user);
   }
 
   displayedColumns: string[] = ['position', 'subject', 'grade'];
