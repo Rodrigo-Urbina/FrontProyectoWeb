@@ -17,6 +17,14 @@ export class StudentService {
     })
   }
 
+  updateStudent(id: number, body: any) {
+    return this.http.put<any>(`${apiUrl}/user/${id}`, body, this.httpOptions)
+  }
+
+  getSuscription() {
+    return this.http.get<any>(`${apiUrl}/mySubscription`)
+  }
+
   getTeachers() {
     return this.http.get<any>(`${apiUrl}/teacher`, this.httpOptions);
   }
@@ -25,8 +33,8 @@ export class StudentService {
     return this.http.get<any>(`${apiUrl}/teacher/${id}`, this.httpOptions);
   }
 
-  getAppointments(id: number) {
-    return this.http.get<any>(`${apiUrl}/tutoring/teacher/${id}`)
+  getAppointments(id: number, body: any) {
+    return this.http.post<any>(`${apiUrl}/tutoring/teacher/${id}`, body, this.httpOptions)
   }
 
   getPastTutoring() {

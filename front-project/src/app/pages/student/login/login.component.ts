@@ -26,33 +26,6 @@ export class LoginComponent implements OnInit {
       password: new FormControl('', [Validators.required/*, Validators.minLength(5), Validators.maxLength(13)*/])
     })
 
-    /*if(!this.tokenGuard.isAuthenticated()) {
-      let user = this.tokenGuard.getUserData();
-      console.log(user);
-
-      let role = user["role"];
-
-      let userData;
-
-      switch (role) {
-        case 1: userData = USERROLE["admin"];
-          break;
-        case 2: userData = USERROLE["teacher"];
-          break;
-        case 3: userData = USERROLE["student"];
-          break;
-        default: userData = USERROLE["student"];
-           break;
-      }
-
-      console.log(user["role"]);
-      console.log(USERROLE['student']);
-      console.log(userData);
-      let temp! : Object;
-      temp = userData;
-      console.log(userData.urls);
-    }*/
-
   }
 
   login() {

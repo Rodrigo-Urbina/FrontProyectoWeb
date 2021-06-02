@@ -17,6 +17,10 @@ export class TeacherService {
     })
   }
 
+  updateTeacher(id: number, body: any) {
+    return this.http.put<any>(`${apiUrl}/user/${id}`, body, this.httpOptions)
+  }
+
   getPastTutoring() {
     return this.http.get<any>(`${apiUrl}/tutoring/myPast`, this.httpOptions)
   }

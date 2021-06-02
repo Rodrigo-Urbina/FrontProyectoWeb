@@ -4,31 +4,61 @@
     <form [formGroup]="registerForm" (ngSubmit)="register()">
       <mat-form-field fxLayoutAlgn="stretch" fxLayout="column">
         <div class="form-group">
-          <input matInput type="text" placeholder="email" formControlName="email">
+          <input
+            matInput
+            type="text"
+            placeholder="email"
+            formControlName="email"
+          />
         </div>
       </mat-form-field>
 
       <mat-form-field fxLayoutAlgn="stretch" fxLayout="column">
-        <input matInput type="text" placeholder="name" formControlName="firstName">
+        <input
+          matInput
+          type="text"
+          placeholder="name"
+          formControlName="firstName"
+        />
       </mat-form-field>
 
       <mat-form-field fxLayoutAlgn="stretch" fxLayout="column">
-        <input matInput type="text" placeholder="surname" formControlName="LastName">
+        <input
+          matInput
+          type="text"
+          placeholder="surname"
+          formControlName="lastName"
+        />
       </mat-form-field>
 
       <mat-form-field fxLayoutAlgn="stretch" fxLayout="column">
-        <input matInput type="password" placeholder="Password" formControlName="password">
+        <input
+          matInput
+          type="password"
+          placeholder="Password"
+          formControlName="password"
+        />
       </mat-form-field>
 
       <mat-form-field fxLayoutAlgn="stretch" fxLayout="column">
-          <input matInput type="password" placeholder="Repite tu contraseña" formControlName="confirmPassword">
+        <input
+          matInput
+          type="password"
+          placeholder="Repite tu contraseña"
+          formControlName="confirmPassword"
+        />
       </mat-form-field>
 
       <div class="form-group">
-        <button mat-raised-button [disabled]=registerForm.invalid class="btn btn-primary">Registro</button>
+        <button
+          mat-raised-button
+          [disabled]="registerForm.invalid"
+          class="btn btn-primary"
+        >
+          Registro
+        </button>
         <a routerLink="/login" class="btn btn-link">Login</a>
       </div>
     </form>
-
   </mat-card>
 </div>

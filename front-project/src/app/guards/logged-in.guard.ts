@@ -22,7 +22,7 @@ export class LoggedInGuard implements CanActivate {
     } else {
       let user = this.tokenGuardService.getUserData();
       let role = user["role"];
-      let userData;
+      let userData!: any;
 
       switch (role) {
         case 1: userData = USERROLE["admin"];
@@ -37,7 +37,7 @@ export class LoggedInGuard implements CanActivate {
 
       userData !== undefined
       ? this.router.navigate([userData.homePage])
-      : this.router.navigate([LOGIN]); // change for HOME
+      : this.router.navigate([userData.login]); // change for HOME
 
       return false;
 

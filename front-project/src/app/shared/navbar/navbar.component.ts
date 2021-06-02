@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { LOGIN } from 'src/app/constants/paths';
+import { USERROLE } from 'src/app/constants/userRole';
 import { TokenGuardService } from 'src/app/services/token-guard.service';
 
 @Component({
@@ -16,12 +18,55 @@ export class NavbarComponent implements OnInit {
 
   ngOnInit(): void {
     this.user = this.tokenService.getUserData();
-    // console.log(this.user);
+
+    console.log(this.user);
+  }
+
+  homepage() {
+    let userData !: any;
+
+    switch (this.user.role) {
+        case 1: userData = USERROLE["admin"];
+          break;
+        case 2: userData = USERROLE["teacher"];
+          break;
+        case 3: userData = USERROLE["student"];
+          break;
+        default: userData = USERROLE["student"];
+           break;
+      }
+    this.router.navigate([userData.homePage]);
+  }
+
+  config() {
+    let userData !: any;
+    switch (this.user.role) {
+        case 1: userData = USERROLE["admin"];
+          break;
+        case 2: userData = USERROLE["teacher"];
+          break;
+        case 3: userData = USERROLE["student"];
+          break;
+        default: userData = USERROLE["student"];
+           break;
+      }
+    this.router.navigate([userData.config]);
   }
 
   logout() {
+    let userData !: any;
     localStorage.removeItem("currentUser");
-    this.router.navigate(['']);
+    switch (this.user.role) {
+        case 1: userData = USERROLE["admin"];
+          break;
+        case 2: userData = USERROLE["teacher"];
+          break;
+        case 3: userData = USERROLE["student"];
+          break;
+        default: userData = USERROLE["student"];
+           break;
+      }
+    this.router.navigate([userData.login]);
   }
 
 }

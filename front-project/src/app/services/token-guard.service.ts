@@ -18,9 +18,12 @@ export class TokenGuardService {
       user = null;
     }
 
+    console.log(user.jwt);
+
 
     if(user) {
-      return !jwtHelper.isTokenExpired(user.token);
+      console.log(jwtHelper.isTokenExpired(user.jwt))
+      return !jwtHelper.isTokenExpired(user.jwt);
     }
     return false;
   }

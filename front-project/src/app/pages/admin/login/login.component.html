@@ -1,6 +1,6 @@
 <div fxLayoutAlign="center center" fxFlexFill>
   <mat-card fxFlex="25">
-    <h2>Login</h2>
+    <h2>Admin Login</h2>
     <form [formGroup]="loginForm" (ngSubmit)="login()">
       <mat-form-field fxLayoutAlgn="stretch" fxLayout="column">
         <div class="form-group">
@@ -13,7 +13,6 @@
       </mat-form-field>
 
       <div class="form-group">
-        <a routerLink="/register" class="btn btn-link">Register</a>
         <button mat-raised-button [disabled]=loginForm.invalid class="btn btn-primary">Login</button>
       </div>
     </form>
