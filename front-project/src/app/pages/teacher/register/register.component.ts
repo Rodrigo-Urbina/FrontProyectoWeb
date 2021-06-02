@@ -34,7 +34,8 @@ export class TeacherRegisterComponent implements OnInit {
 
     let newBody = {
       "email": body.email,
-      "password": body.password
+      "password": body.password,
+      "role": "2"
     }
 
     console.log(newBody);
